@@ -1,8 +1,10 @@
 name: Publish to npm
-# Runs when a GitHub Release is published. Requires repository secret NPM_TOKEN (an npm automation token).
+# Uses npm trusted publishing (OIDC): no NPM_TOKEN secret. Configure the trusted publisher on npmjs.com
+# (user shahvatsalofficial, repo DocSutra-AI, workflow publish.yml). Runs on a published GitHub Release or manually.
 on:
   release:
     types: [published]
+  workflow_dispatch:
 permissions:
   contents: read
   id-token: write
@@ -14,8 +16,6 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 22
-          registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest # trusted publishing needs npm >= 11.5.1
       - run: npm test
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm publish --access public
