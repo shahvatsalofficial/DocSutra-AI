@@ -12,7 +12,7 @@ Honest record of what exists. Test counts and accuracy are in [evidence/summary.
 - 16 skills with honest `backing`, project-local installer for 5 host folders.
 - Hand-labelled benchmark corpus with precision/recall gate in CI.
 - Loopback read-only report server with bearer token.
-- Cross-OS CI configuration (Linux, Windows, macOS x Node 20/22/24). Actual run results: see the repository Actions tab.
+- Cross-OS CI configuration (Linux, Windows, macOS x Node 20/22/24). **Observed:** CI run [42767882960](https://github.com/shahvatsalofficial/DocSutra-AI/actions/runs/42767882960) passed all 9 jobs (ubuntu, windows, macos x Node 20, 22, 24) on commit after the test-runner fix.
 
 ## Not implemented
 
