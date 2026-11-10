@@ -1,0 +1,23 @@
+{
+  "description": "Human-labelled ground truth for benchmark/corpus. Labels were written from the corpus construction, not from tool output. tricky.md must produce zero findings.",
+  "expected": [
+    { "file": "docs/guide.md", "line": 31, "rule": "DUPLICATE_HEADING" },
+    { "file": "broken.md", "line": 3, "rule": "BROKEN_LOCAL_LINK" },
+    { "file": "broken.md", "line": 4, "rule": "BROKEN_ANCHOR" },
+    { "file": "broken.md", "line": 5, "rule": "UNDEFINED_REFERENCE" },
+    { "file": "broken.md", "line": 6, "rule": "UNSAFE_LINK_SCHEME" },
+    { "file": "broken.md", "line": 7, "rule": "IMAGE_MISSING_ALT" },
+    { "file": "broken.md", "line": 8, "rule": "IMAGE_MISSING_ALT" },
+    { "file": "broken.md", "line": 9, "rule": "EMPTY_LINK_TEXT" },
+    { "file": "broken.md", "line": 10, "rule": "MALFORMED_LINK" },
+    { "file": "broken.md", "line": 11, "rule": "OUTSIDE_REPOSITORY_LINK" },
+    { "file": "broken.md", "line": 12, "rule": "BROKEN_LOCAL_LINK" },
+    { "file": "broken.md", "line": 13, "rule": "BROKEN_ANCHOR" },
+    { "file": "broken.md", "line": 16, "rule": "PIPE_TO_SHELL" },
+    { "file": "broken.md", "line": 17, "rule": "DESTRUCTIVE_COMMAND" },
+    { "file": "broken.md", "line": 18, "rule": "CLI_UNKNOWN_FLAG" },
+    { "file": "broken.md", "line": 19, "rule": "CLI_UNKNOWN_SUBCOMMAND" },
+    { "file": "broken.md", "line": 22, "rule": "HEADING_LEVEL_SKIP" },
+    { "file": "unclosed.md", "line": 5, "rule": "UNCLOSED_CODE_FENCE" }
+  ]
+}

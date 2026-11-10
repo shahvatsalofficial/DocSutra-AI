@@ -1,0 +1,78 @@
+{
+  "corpus": "benchmark/corpus",
+  "files": 5,
+  "labelledIssues": 18,
+  "reported": 18,
+  "truePositives": 18,
+  "falsePositives": [],
+  "falseNegatives": [],
+  "precision": 1,
+  "recall": 1,
+  "f1": 1,
+  "trickyMdFindings": 0,
+  "perRule": {
+    "DUPLICATE_HEADING": {
+      "expected": 1,
+      "found": 1
+    },
+    "BROKEN_LOCAL_LINK": {
+      "expected": 2,
+      "found": 2
+    },
+    "BROKEN_ANCHOR": {
+      "expected": 2,
+      "found": 2
+    },
+    "UNDEFINED_REFERENCE": {
+      "expected": 1,
+      "found": 1
+    },
+    "UNSAFE_LINK_SCHEME": {
+      "expected": 1,
+      "found": 1
+    },
+    "IMAGE_MISSING_ALT": {
+      "expected": 2,
+      "found": 2
+    },
+    "EMPTY_LINK_TEXT": {
+      "expected": 1,
+      "found": 1
+    },
+    "MALFORMED_LINK": {
+      "expected": 1,
+      "found": 1
+    },
+    "OUTSIDE_REPOSITORY_LINK": {
+      "expected": 1,
+      "found": 1
+    },
+    "PIPE_TO_SHELL": {
+      "expected": 1,
+      "found": 1
+    },
+    "DESTRUCTIVE_COMMAND": {
+      "expected": 1,
+      "found": 1
+    },
+    "CLI_UNKNOWN_FLAG": {
+      "expected": 1,
+      "found": 1
+    },
+    "CLI_UNKNOWN_SUBCOMMAND": {
+      "expected": 1,
+      "found": 1
+    },
+    "HEADING_LEVEL_SKIP": {
+      "expected": 1,
+      "found": 1
+    },
+    "UNCLOSED_CODE_FENCE": {
+      "expected": 1,
+      "found": 1
+    }
+  },
+  "tool": "DocSutra AI 0.2.0",
+  "rules": "2.0.0",
+  "node": "v24.15.0"
+}

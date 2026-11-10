@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DocSutra Static Audit Report",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "tool",
+    "mode",
+    "createdAt",
+    "summary",
+    "files",
+    "findings",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "tool": {
+      "const": "DocSutra AI"
+    },
+    "mode": {
+      "const": "static-offline"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "files",
+        "errors",
+        "warnings"
+      ],
+      "additionalProperties": true
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "rule",
+          "severity",
+          "file",
+          "line",
+          "message",
+          "status",
+          "verificationMethod"
+        ]
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

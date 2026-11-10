@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "DocSutra AI",
+          "version": "0.2.0",
+          "informationUri": "https://github.com/shahvatsalofficial/DocSutra-AI",
+          "rules": [
+            {
+              "id": "BROKEN_LOCAL_LINK",
+              "name": "Broken local link",
+              "shortDescription": {
+                "text": "Broken local link"
+              },
+              "fullDescription": {
+                "text": "A relative or repository-root link points at a file or directory that does not exist."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "BROKEN_ANCHOR",
+              "name": "Broken heading anchor",
+              "shortDescription": {
+                "text": "Broken heading anchor"
+              },
+              "fullDescription": {
+                "text": "A #fragment does not match any heading or id/name attribute in the target Markdown file (GitHub slug rules)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PATH_CASE_MISMATCH",
+              "name": "Link path differs in letter case",
+              "shortDescription": {
+                "text": "Link path differs in letter case"
+              },
+              "fullDescription": {
+                "text": "The link resolves on case-insensitive filesystems (Windows/macOS) but breaks on Linux and GitHub."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "UNDEFINED_REFERENCE",
+              "name": "Undefined reference link",
+              "shortDescription": {
+                "text": "Undefined reference link"
+              },
+              "fullDescription": {
+                "text": "A [text][label] reference has no matching [label]: url definition."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "MALFORMED_LINK",
+              "name": "Malformed link encoding",
+              "shortDescription": {
+                "text": "Malformed link encoding"
+              },
+              "fullDescription": {
+                "text": "The URL contains invalid percent-encoding or NUL characters."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "UNSAFE_LINK_SCHEME",
+              "name": "Unsafe URL scheme",
+              "shortDescription": {
+                "text": "Unsafe URL scheme"
+              },
+              "fullDescription": {
+                "text": "A link uses javascript:, file:, vbscript: or another non-web scheme."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "OUTSIDE_REPOSITORY_LINK",
+              "name": "Link escapes repository",
+              "shortDescription": {
+                "text": "Link escapes repository"
+              },
+              "fullDescription": {
+                "text": "A local link resolves outside the scanned root; it is reported and never opened."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "IMAGE_MISSING_ALT",
+              "name": "Image without alternative text",
+              "shortDescription": {
+                "text": "Image without alternative text"
+              },
+              "fullDescription": {
+                "text": "Markdown or HTML image has no alt text (WCAG 1.1.1)."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "UNCLOSED_CODE_FENCE",
+              "name": "Unclosed code fence",
+              "shortDescription": {
+                "text": "Unclosed code fence"
+              },
+              "fullDescription": {
+                "text": "A fenced code block is never closed, so everything after it renders as code."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "CLI_UNKNOWN_SUBCOMMAND",
+              "name": "Documented subcommand not in declared contract",
+              "shortDescription": {
+                "text": "Documented subcommand not in declared contract"
+              },
+              "fullDescription": {
+                "text": "A documented command uses a subcommand absent from the cliContracts you declared. The declaration itself may be stale."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "CLI_UNKNOWN_FLAG",
+              "name": "Documented flag not in declared contract",
+              "shortDescription": {
+                "text": "Documented flag not in declared contract"
+              },
+              "fullDescription": {
+                "text": "A documented command uses a --flag absent from the cliContracts you declared. The declaration itself may be stale."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "PIPE_TO_SHELL",
+              "name": "Pipe-to-shell install pattern",
+              "shortDescription": {
+                "text": "Pipe-to-shell install pattern"
+              },
+              "fullDescription": {
+                "text": "A snippet pipes a download straight into a shell (curl | sh). Never executed by DocSutra; flagged for manual review."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "DESTRUCTIVE_COMMAND",
+              "name": "Destructive command in docs",
+              "shortDescription": {
+                "text": "Destructive command in docs"
+              },
+              "fullDescription": {
+                "text": "A snippet contains a destructive command (rm -rf, mkfs, dd, chmod -R 777 ...). Never executed; flagged for manual review."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "SECRET_IN_DOCS",
+              "name": "Possible credential in documentation",
+              "shortDescription": {
+                "text": "Possible credential in documentation"
+              },
+              "fullDescription": {
+                "text": "Text matches a known credential format (GitHub/npm/AWS/Slack/Stripe/Google tokens, private keys). The value is redacted in all reports."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            },
+            {
+              "id": "DUPLICATE_HEADING",
+              "name": "Duplicate heading in one file",
+              "shortDescription": {
+                "text": "Duplicate heading in one file"
+              },
+              "fullDescription": {
+                "text": "Duplicate headings get -1, -2 suffixed anchors, which makes anchor links fragile."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              }
+            },
+            {
+              "id": "EMPTY_LINK_TEXT",
+              "name": "Link with no text",
+              "shortDescription": {
+                "text": "Link with no text"
+              },
+              "fullDescription": {
+                "text": "A link has an empty label, which is unusable for screen-reader users (WCAG 2.4.4)."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "HEADING_LEVEL_SKIP",
+              "name": "Heading level skipped",
+              "shortDescription": {
+                "text": "Heading level skipped"
+              },
+              "fullDescription": {
+                "text": "A heading jumps more than one level (for example h2 to h4), which weakens document structure."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              }
+            },
+            {
+              "id": "INVALID_FILE",
+              "name": "Document could not be read as UTF-8 text",
+              "shortDescription": {
+                "text": "Document could not be read as UTF-8 text"
+              },
+              "fullDescription": {
+                "text": "The file contains invalid UTF-8 or a NUL byte and was not analysed."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "BROKEN_LOCAL_LINK",
+          "level": "error",
+          "message": {
+            "text": "Local target 'docs/obsolete.md' does not exist"
+          },
+          "partialFingerprints": {
+            "docsutraId": "dfde9e959715e6c8"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "README.md"
+                },
+                "region": {
+                  "startLine": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "BROKEN_ANCHOR",
+          "level": "error",
+          "message": {
+            "text": "Anchor '#advanced-setup' was not found in 'docs/install.md'"
+          },
+          "partialFingerprints": {
+            "docsutraId": "0dae45e8b4dc337c"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "README.md"
+                },
+                "region": {
+                  "startLine": 4
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "IMAGE_MISSING_ALT",
+          "level": "warning",
+          "message": {
+            "text": "Image is missing descriptive alternative text"
+          },
+          "partialFingerprints": {
+            "docsutraId": "733005d368f0f1aa"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "README.md"
+                },
+                "region": {
+                  "startLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CLI_UNKNOWN_FLAG",
+          "level": "error",
+          "message": {
+            "text": "Documented flag '--old-flag' is absent from the declared 'demoapp' CLI contract"
+          },
+          "partialFingerprints": {
+            "docsutraId": "97cf82c0264d8685"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "README.md"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CLI_UNKNOWN_SUBCOMMAND",
+          "level": "error",
+          "message": {
+            "text": "Documented 'demoapp' subcommand 'deploy' is absent from the declared CLI contract"
+          },
+          "partialFingerprints": {
+            "docsutraId": "32fd5fc3eadf6f59"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "README.md"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

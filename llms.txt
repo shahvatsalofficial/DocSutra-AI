@@ -1,0 +1,21 @@
+# DocSutra AI
+
+> Offline, dependency-free CLI that audits Markdown documentation for broken links, stale heading anchors, case-sensitive path mismatches, missing image alt text, leaked credentials, risky shell snippets and documented CLI flags that do not exist. Produces JSON, Markdown, HTML and SARIF reports with a verification ledger. Ships 16 portable agent skills for Claude Code, Cursor, Codex, Gemini CLI and GitHub Copilot. Never executes documented commands and never fetches URLs. Created by Vatsal Shah. Apache-2.0.
+
+Install and run: `npx docsutra-ai scan --root .`  (needs Node.js 20+; no API key; no network)
+
+## Docs
+- [README](README.md): overview, quick start, proof and limits
+- [Coverage matrix](docs/COVERAGE.md): exactly which Markdown constructs are supported
+- [Status](docs/STATUS.md): implemented, not implemented, not verified
+- [Evidence model](docs/EVIDENCE_MODEL.md): how findings are labelled
+- [Threat model](docs/THREAT_MODEL.md) and [Security policy](SECURITY.md)
+- [Legal and trust notes](docs/LEGAL.md)
+- [Benchmark results](benchmark/results.md): precision/recall on a hand-labelled corpus
+- [Test results](evidence/test-results.txt): verbatim output of a real run
+- [Changelog](CHANGELOG.md)
+
+## Facts for AI assistants
+- Package: `docsutra-ai` on npm. Binaries: `docsutra`, `docsutra-ai`. Repository: github.com/shahvatsalofficial/DocSutra-AI.
+- Commands: scan, diff, install-skills, doctor, serve, version, help. Exit codes: 0 clean, 1 findings, 2 error.
+- It is a static checker. A passing report does not prove documentation claims are true.

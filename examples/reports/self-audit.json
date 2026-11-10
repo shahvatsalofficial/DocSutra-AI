@@ -1,0 +1,608 @@
+{
+  "schemaVersion": "2.0.0",
+  "tool": "DocSutra AI",
+  "toolVersion": "0.2.0",
+  "rulesVersion": "2.0.0",
+  "mode": "static-offline",
+  "createdAt": "2026-11-10T06:16:12.934Z",
+  "environment": {
+    "node": "v24.15.0",
+    "platform": "win32",
+    "arch": "x64",
+    "gitRevision": null,
+    "durationMs": 774,
+    "networkUsed": false,
+    "commandsExecuted": 0
+  },
+  "root": "<self>",
+  "inputFingerprint": "0052568cddea73f445d3d4e956a5967609602155853bd40c1ac6b6543b929869",
+  "summary": {
+    "files": 58,
+    "filesUnreadable": 0,
+    "checkedLocalLinks": 52,
+    "externalLinksNotChecked": 28,
+    "shellLinesNotExecuted": 35,
+    "declaredCliLinesInspected": 22,
+    "errors": 0,
+    "warnings": 0,
+    "info": 0,
+    "suppressed": 0,
+    "byRule": {},
+    "snippetClasses": {
+      "inert-or-unclassified": 34,
+      "mutation": 1
+    }
+  },
+  "ledger": {
+    "code-fences-balanced": {
+      "performed": 58,
+      "passed": 58,
+      "failed": 0
+    },
+    "secret-scan": {
+      "performed": 58,
+      "passed": 58,
+      "failed": 0
+    },
+    "local-links": {
+      "performed": 52,
+      "passed": 52,
+      "failed": 0
+    },
+    "cli-contract-lines": {
+      "performed": 22,
+      "passed": 22,
+      "failed": 0
+    },
+    "image-alt-text": {
+      "performed": 4,
+      "passed": 4,
+      "failed": 0
+    }
+  },
+  "rules": {
+    "BROKEN_LOCAL_LINK": {
+      "severity": "error",
+      "category": "links",
+      "title": "Broken local link",
+      "description": "A relative or repository-root link points at a file or directory that does not exist.",
+      "evidence": "local-filesystem"
+    },
+    "BROKEN_ANCHOR": {
+      "severity": "error",
+      "category": "links",
+      "title": "Broken heading anchor",
+      "description": "A #fragment does not match any heading or id/name attribute in the target Markdown file (GitHub slug rules).",
+      "evidence": "local-filesystem"
+    },
+    "PATH_CASE_MISMATCH": {
+      "severity": "error",
+      "category": "links",
+      "title": "Link path differs in letter case",
+      "description": "The link resolves on case-insensitive filesystems (Windows/macOS) but breaks on Linux and GitHub.",
+      "evidence": "local-filesystem"
+    },
+    "UNDEFINED_REFERENCE": {
+      "severity": "error",
+      "category": "links",
+      "title": "Undefined reference link",
+      "description": "A [text][label] reference has no matching [label]: url definition.",
+      "evidence": "local-static"
+    },
+    "MALFORMED_LINK": {
+      "severity": "error",
+      "category": "links",
+      "title": "Malformed link encoding",
+      "description": "The URL contains invalid percent-encoding or NUL characters.",
+      "evidence": "local-static"
+    },
+    "UNSAFE_LINK_SCHEME": {
+      "severity": "error",
+      "category": "security",
+      "title": "Unsafe URL scheme",
+      "description": "A link uses javascript:, file:, vbscript: or another non-web scheme.",
+      "evidence": "local-static"
+    },
+    "OUTSIDE_REPOSITORY_LINK": {
+      "severity": "warning",
+      "category": "links",
+      "title": "Link escapes repository",
+      "description": "A local link resolves outside the scanned root; it is reported and never opened.",
+      "evidence": "local-static"
+    },
+    "IMAGE_MISSING_ALT": {
+      "severity": "warning",
+      "category": "accessibility",
+      "title": "Image without alternative text",
+      "description": "Markdown or HTML image has no alt text (WCAG 1.1.1).",
+      "evidence": "local-static"
+    },
+    "UNCLOSED_CODE_FENCE": {
+      "severity": "warning",
+      "category": "structure",
+      "title": "Unclosed code fence",
+      "description": "A fenced code block is never closed, so everything after it renders as code.",
+      "evidence": "local-static"
+    },
+    "CLI_UNKNOWN_SUBCOMMAND": {
+      "severity": "error",
+      "category": "commands",
+      "title": "Documented subcommand not in declared contract",
+      "description": "A documented command uses a subcommand absent from the cliContracts you declared. The declaration itself may be stale.",
+      "evidence": "declared-contract"
+    },
+    "CLI_UNKNOWN_FLAG": {
+      "severity": "error",
+      "category": "commands",
+      "title": "Documented flag not in declared contract",
+      "description": "A documented command uses a --flag absent from the cliContracts you declared. The declaration itself may be stale.",
+      "evidence": "declared-contract"
+    },
+    "PIPE_TO_SHELL": {
+      "severity": "warning",
+      "category": "security",
+      "title": "Pipe-to-shell install pattern",
+      "description": "A snippet pipes a download straight into a shell (curl | sh). Never executed by DocSutra; flagged for manual review.",
+      "evidence": "local-static"
+    },
+    "DESTRUCTIVE_COMMAND": {
+      "severity": "warning",
+      "category": "security",
+      "title": "Destructive command in docs",
+      "description": "A snippet contains a destructive command (rm -rf, mkfs, dd, chmod -R 777 ...). Never executed; flagged for manual review.",
+      "evidence": "local-static"
+    },
+    "SECRET_IN_DOCS": {
+      "severity": "error",
+      "category": "security",
+      "title": "Possible credential in documentation",
+      "description": "Text matches a known credential format (GitHub/npm/AWS/Slack/Stripe/Google tokens, private keys). The value is redacted in all reports.",
+      "evidence": "local-static"
+    },
+    "DUPLICATE_HEADING": {
+      "severity": "info",
+      "category": "structure",
+      "title": "Duplicate heading in one file",
+      "description": "Duplicate headings get -1, -2 suffixed anchors, which makes anchor links fragile.",
+      "evidence": "local-static"
+    },
+    "EMPTY_LINK_TEXT": {
+      "severity": "warning",
+      "category": "accessibility",
+      "title": "Link with no text",
+      "description": "A link has an empty label, which is unusable for screen-reader users (WCAG 2.4.4).",
+      "evidence": "local-static"
+    },
+    "HEADING_LEVEL_SKIP": {
+      "severity": "info",
+      "category": "accessibility",
+      "title": "Heading level skipped",
+      "description": "A heading jumps more than one level (for example h2 to h4), which weakens document structure.",
+      "evidence": "local-static"
+    },
+    "INVALID_FILE": {
+      "severity": "error",
+      "category": "structure",
+      "title": "Document could not be read as UTF-8 text",
+      "description": "The file contains invalid UTF-8 or a NUL byte and was not analysed.",
+      "evidence": "local-static"
+    }
+  },
+  "files": [
+    {
+      "path": ".agents/skills/docsutra-accessible-docs/SKILL.md",
+      "sha256": "c40c5ae0fbbb51793b229b5fac04477f95f513fe3502336affe8f1fee172a6d1",
+      "bytes": 1659,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-api-cartographer/SKILL.md",
+      "sha256": "29157253cc02aead8898547af961df5278cc05c165172bb9e4b2a5c5cce0a927",
+      "bytes": 1626,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-cli-contract/SKILL.md",
+      "sha256": "aa22cef585af436c18f522ac7c22cb2a4907b7e330f294829655a8326bc0006a",
+      "bytes": 1688,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-diagram-alignment/SKILL.md",
+      "sha256": "b92a1d3687675158b56303170f7af5e4281d3bcbbf069015e9744cadb26b489b",
+      "bytes": 1495,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-drift-radar/SKILL.md",
+      "sha256": "19392d769dacae71aa5934bb03631745099d7fc075a1d6ba08b5af5a0f0abdec",
+      "bytes": 1575,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-evidence-verifier/SKILL.md",
+      "sha256": "bdb221e3e538256c00cca7c7b9f12d85bb234a77cad6d1eaff3915775d61ad3f",
+      "bytes": 1591,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-example-forge/SKILL.md",
+      "sha256": "b5e51a160fdeb6b157c30df4ce45520039480185fef7c78f35a2dc637648ccfe",
+      "bytes": 1483,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-link-guardian/SKILL.md",
+      "sha256": "c789672a366f38a731d52aa5e3f909d5eea3de354de6204bbc3d1aa2fb129be3",
+      "bytes": 1875,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-localization/SKILL.md",
+      "sha256": "4b0e9ed41660d50c562dc55129d40f2ab898b9d2200f6d8f39608102ef26d8da",
+      "bytes": 1495,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-patch-crafter/SKILL.md",
+      "sha256": "8253f1697b3d6a347ebd949fb86059a99776eace65d25a4e49118e3ff65f6c9a",
+      "bytes": 1556,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-prime/SKILL.md",
+      "sha256": "81288fa72d7770c0a8ed1584ba0f00a7bcbe9b48a1a9b3658b6f4584e78204e8",
+      "bytes": 1945,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-privacy-guard/SKILL.md",
+      "sha256": "8d3528e298fd1280e09ee6d288884211ee8df2048d67b12ac363695bf775f2fa",
+      "bytes": 1818,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-release-notes/SKILL.md",
+      "sha256": "ad5bcbe2e42b7d362b8e3d43e0ffc75be1b255e5162b6f51472441011d77b13f",
+      "bytes": 1496,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-schema-sentinel/SKILL.md",
+      "sha256": "0d81d3d39d8f950bc3c004dd96d2d2870a59de240b7bdd57e66c1181fef6f2e8",
+      "bytes": 1459,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-snippet-lab/SKILL.md",
+      "sha256": "18e794c7d292983b3a0de24384a75a6df0deb7eb3f0b1d0ea0022ddbe784485a",
+      "bytes": 1681,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".agents/skills/docsutra-truth-keeper/SKILL.md",
+      "sha256": "a52f08cc77f44fab17908f9b3eb2b0f4906ebe08251e470e2ff09149008dff42",
+      "bytes": 1753,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.md",
+      "sha256": "c8e37a55850235b190de414bf35354743677a4014b6c00737f4d57c5e8e73d3d",
+      "bytes": 232,
+      "headings": 5,
+      "links": 0
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "sha256": "5268c446955c75ac74b44f0690e0858ffa246833370acf8bf1688948c863abb5",
+      "bytes": 152,
+      "headings": 5,
+      "links": 0
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "129eea5b4cd3eab0177baeb726e3baf2b6bba0ddd9bd0052aa574b61944a6136",
+      "bytes": 713,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "agents/README.md",
+      "sha256": "3c82ec50667e5ebada42b263e7589b0b71d18b14e1aefe16942a4ad974cb8525",
+      "bytes": 467,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "5c27af589b638d3f22036010f729151565fda52ff68566373adcca2b1c4d3985",
+      "bytes": 2561,
+      "headings": 6,
+      "links": 0
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "30f0b0157c5981c655583cf097db5d0a3aee321e8179c62d85d2f73927133513",
+      "bytes": 376,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "390b81443e806ca89f2fccd01bd8a130463a80a8fbdffb6e019ac4d868f3fdd5",
+      "bytes": 400,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "8c13ab851b3e6825a2b3800081ab27ba6388584f3d2df0e8d36ba90ef2d5bbb5",
+      "bytes": 579,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "8d07114ca043a2d2e8555bc76b99f3ca25caa7b7c81a5f8876dd5de2975cae97",
+      "bytes": 1928,
+      "headings": 5,
+      "links": 0
+    },
+    {
+      "path": "docs/CLAUDE_MASTER_BUILD_PROMPT.md",
+      "sha256": "b24af6a2656f9403e671403ebe1f5dfc5646804968a24b74460c68f39173e291",
+      "bytes": 39447,
+      "headings": 46,
+      "links": 0
+    },
+    {
+      "path": "docs/COVERAGE.md",
+      "sha256": "db9a1581418d7f5841042cb762de32ddd35873ece966151f953029f0ea1a69e2",
+      "bytes": 2102,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "docs/EVIDENCE_MODEL.md",
+      "sha256": "8916a57d3fd8e414261df8dab557955cc527d10b7347891dbdfd590fa0759e6d",
+      "bytes": 1114,
+      "headings": 2,
+      "links": 0
+    },
+    {
+      "path": "docs/IDE_COMPATIBILITY.md",
+      "sha256": "1d6b12fbaa786aaca86fd2e381ae028dca74e3c59f7b6893a858041417e9b07d",
+      "bytes": 1168,
+      "headings": 1,
+      "links": 2
+    },
+    {
+      "path": "docs/LEGAL.md",
+      "sha256": "d00b277f622e4c81b6f693494e91949e55f4e9182b2389cfa2dc3a0ca5c51771",
+      "bytes": 2634,
+      "headings": 7,
+      "links": 3
+    },
+    {
+      "path": "docs/PLUGIN_CATALOG.md",
+      "sha256": "739b1f5a0805a6b07f3e7f110177dd99228bea0602b2fe3e24846e0c3ab4481f",
+      "bytes": 2858,
+      "headings": 2,
+      "links": 17
+    },
+    {
+      "path": "docs/RELEASE_CHECKLIST.md",
+      "sha256": "bc9801c5fc4b1864bca6daae51e00b7b16cdc3f95c7e3ca2bc80461c2d55b02b",
+      "bytes": 909,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "docs/STATUS.md",
+      "sha256": "a758e2fa5518d07d310fe1cac10074a86ede080d5d73794301318791810a5382",
+      "bytes": 1906,
+      "headings": 4,
+      "links": 3
+    },
+    {
+      "path": "docs/THREAT_MODEL.md",
+      "sha256": "9ef458e6547ca61b4fa44ccfd11d25bd38e5d7b0697e9b7733db6af2595acf23",
+      "bytes": 1213,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "docs/WORKFLOWS.md",
+      "sha256": "30ab83a50df260c0d519cb7b96016da57470379bb705fe7a0f83f42a0a720997",
+      "bytes": 1257,
+      "headings": 5,
+      "links": 0
+    },
+    {
+      "path": "documents/md/01-executive-summary.md",
+      "sha256": "99379307b1e4fbe29d99cfbea7aae45fa2a7f6d3195ffb15f39592cbb0f50131",
+      "bytes": 2807,
+      "headings": 7,
+      "links": 2
+    },
+    {
+      "path": "documents/md/02-functional-specification.md",
+      "sha256": "d5fd095210a79c40e85e81dee746250ba1bc2fe492f5a9c2121e4f4fac4477b8",
+      "bytes": 4012,
+      "headings": 10,
+      "links": 0
+    },
+    {
+      "path": "documents/md/03-technical-architecture.md",
+      "sha256": "d0a9a38b477d0ff856ed25f2ef570362397b9e71c7f9a880c8da333a3ff8518c",
+      "bytes": 4439,
+      "headings": 9,
+      "links": 0
+    },
+    {
+      "path": "documents/md/04-user-guide.md",
+      "sha256": "ed2abc6bfa7aa974bf3a861bb2235ebb2ffb9cd966d8ee4ec0c709118db624f5",
+      "bytes": 3684,
+      "headings": 12,
+      "links": 2
+    },
+    {
+      "path": "documents/md/05-rules-reference.md",
+      "sha256": "dcec7dbfb855aaf8451bea7a562f2dd107e8ab22038bfff67c9fcdfe725f9f3b",
+      "bytes": 868,
+      "headings": 5,
+      "links": 1
+    },
+    {
+      "path": "documents/md/06-security-and-privacy.md",
+      "sha256": "9943e2a0d8878e3a1e135d1c8ced25742bfac580b78929e03aeb241fc61f7445",
+      "bytes": 2959,
+      "headings": 6,
+      "links": 2
+    },
+    {
+      "path": "documents/md/07-testing-and-evidence.md",
+      "sha256": "8118f2e3f769bd29487b04083193372fd5956bbb4cbcb5d91f951dde692dabf8",
+      "bytes": 3134,
+      "headings": 9,
+      "links": 6
+    },
+    {
+      "path": "documents/md/08-ci-and-integration.md",
+      "sha256": "324225637194f94cf1607ef652488f9cc551f5fdd09b6393d55f5262b33d4771",
+      "bytes": 2250,
+      "headings": 8,
+      "links": 1
+    },
+    {
+      "path": "documents/md/09-agent-skills-guide.md",
+      "sha256": "ed62614614f7fb6daca714fbf5ead5d9bf97308eb457deb0d0c3910d8cfce110",
+      "bytes": 3186,
+      "headings": 7,
+      "links": 0
+    },
+    {
+      "path": "documents/md/10-legal-and-trust.md",
+      "sha256": "dd23b62734b6219b69d5d27e33ddc1f350b25da0972f3b6f6f1fce1060d695cd",
+      "bytes": 2246,
+      "headings": 9,
+      "links": 3
+    },
+    {
+      "path": "documents/md/11-release-runbook.md",
+      "sha256": "82cce773d24504020bdf4cb66541f45fb536fbbb63b218d1a6a6a51c9069cdd5",
+      "bytes": 1632,
+      "headings": 8,
+      "links": 0
+    },
+    {
+      "path": "documents/md/12-roadmap-and-faq.md",
+      "sha256": "fc7fcb209fcd96624359ffa0c30ee9f96f24b3cca068a2051b515bd8cba85d33",
+      "bytes": 2585,
+      "headings": 4,
+      "links": 2
+    },
+    {
+      "path": "evidence/benchmark.md",
+      "sha256": "47e725606e0dee064a26325db6d8cafaeec8e454446a3be65b3702c0504c7d38",
+      "bytes": 668,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "GEMINI.md",
+      "sha256": "72ab8cae597eec483951422c5b270484868f010959e1051b80ee65e3086d9c17",
+      "bytes": 278,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "GOVERNANCE.md",
+      "sha256": "bca26dda89a7af71eaf4c27ceaf172eec38cc9d638cf80821a6098fbf629582c",
+      "bytes": 299,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "integrations/README.md",
+      "sha256": "ca847c556a533df0f5963603f260518a25d37e5e2d422fa9e2da98b600e7f8aa",
+      "bytes": 318,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "README.md",
+      "sha256": "57364457fab6500b801da95bb43a2239360139c0ea4694cbf1dce11d897bc688",
+      "bytes": 7137,
+      "headings": 13,
+      "links": 32
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "7238d360e323a61c3ab5ec9222f99b2536b0975584719e0e28970e65f178f6a9",
+      "bytes": 1017,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "rules/README.md",
+      "sha256": "42f789dc5bd1c91c1ee0b0af776b938a032d82a3e40af7a0dede75a874800be4",
+      "bytes": 448,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "fce1452e4bf6086e19c864b2c03abb23eb5d0817d6e2281d54be2ab8141ffa70",
+      "bytes": 2353,
+      "headings": 6,
+      "links": 3
+    },
+    {
+      "path": "SUPPORT.md",
+      "sha256": "724217ed1ffeed57b92d422ce12a76b70e514835224fe03d5002149afc374b89",
+      "bytes": 272,
+      "headings": 1,
+      "links": 1
+    },
+    {
+      "path": "workflows/audit.md",
+      "sha256": "3588db959206f17055a535d7a0ace88d6d3f7681cbd5869d215deb6ef8e26df6",
+      "bytes": 237,
+      "headings": 1,
+      "links": 0
+    },
+    {
+      "path": "workflows/snippet-lab.md",
+      "sha256": "a3dd2737a6efe2aa7db18c77fa3787c927e820a91c86f81272d699e8d683138d",
+      "bytes": 370,
+      "headings": 1,
+      "links": 0
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "External URLs are not fetched or checked.",
+    "Shell commands are statically classified and, if you declare cliContracts, compared to that declaration; no command or test is ever executed.",
+    "The scanner is a bounded Markdown scanner, not a full CommonMark/MDX parser; setext/ATX headings, fenced and indented code, code spans, comments, inline/reference links, images and HTML href/src are covered. Footnotes, MDX expressions and generated docs are not.",
+    "A CLI contract is a declaration you maintain; it can itself be stale. It is not runtime verification of the real CLI.",
+    "Secret detection uses high-precision formats only and cannot find arbitrary secrets.",
+    "An audit timestamp records when the check ran; it does not certify that documentation claims or API behaviour are true."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0.0",
+  "ignore": ["vendor", "third_party", "generated", "benchmark", "examples"],
+  "maxFiles": 3000,
+  "cliContracts": {
+    "docsutra": {
+      "subcommands": ["scan", "diff", "install-skills", "doctor", "serve", "version", "help"],
+      "flags": ["--root", "--config", "--out", "--out-dir", "--format", "--fail-on", "--baseline", "--before", "--after", "--host", "--target", "--force", "--port", "--report", "--help"]
+    }
+  }
+}

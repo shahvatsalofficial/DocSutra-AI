@@ -1,0 +1,8 @@
+{
+ "cliContracts": {
+   "demoapp": {
+     "subcommands": ["build", "test"],
+     "flags": ["--dry-run", "--verbose"]
+   }
+ }
+}

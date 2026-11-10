@@ -1,0 +1,46 @@
+{
+  "tool": "docsutra-ai 0.2.0",
+  "generatedAt": "2026-11-10T06:16:13.352Z",
+  "runtime": {
+    "node": "v24.15.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "tests": {
+    "pass": 72,
+    "fail": 0,
+    "skipped": 3,
+    "total": 75,
+    "exitCode": 0
+  },
+  "benchmark": {
+    "precision": 1,
+    "recall": 1,
+    "labelledIssues": 18,
+    "falsePositives": 0,
+    "falseNegatives": 0
+  },
+  "samples": {
+    "demo": {
+      "files": 2,
+      "errors": 4,
+      "warnings": 1,
+      "info": 0,
+      "localLinksVerified": 5
+    },
+    "healthy": {
+      "files": 2,
+      "errors": 0,
+      "warnings": 0,
+      "info": 0,
+      "localLinksVerified": 2
+    },
+    "self": {
+      "files": 58,
+      "errors": 0,
+      "warnings": 0,
+      "info": 0,
+      "localLinksVerified": 52
+    }
+  }
+}

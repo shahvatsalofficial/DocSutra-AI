@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0.0",
+  "before": "2026-11-09T19:32:12.834Z",
+  "after": "2026-11-09T19:32:12.917Z",
+  "added": [
+    {
+      "id": "dfde9e959715e6c8",
+      "rule": "BROKEN_LOCAL_LINK",
+      "severity": "error",
+      "file": "README.md",
+      "line": 3,
+      "message": "Local target 'docs/obsolete.md' does not exist",
+      "subject": "docs/obsolete.md",
+      "suggestion": "Correct the path or restore the referenced file.",
+      "status": "failed",
+      "verificationMethod": "local-static",
+      "confidence": "high"
+    },
+    {
+      "id": "0dae45e8b4dc337c",
+      "rule": "BROKEN_ANCHOR",
+      "severity": "error",
+      "file": "README.md",
+      "line": 4,
+      "message": "Anchor '#advanced-setup' was not found in 'docs/install.md'",
+      "subject": "docs/install.md#advanced-setup",
+      "suggestion": "Choose a real heading slug from the referenced Markdown document.",
+      "status": "failed",
+      "verificationMethod": "local-static",
+      "confidence": "high"
+    },
+    {
+      "id": "733005d368f0f1aa",
+      "rule": "IMAGE_MISSING_ALT",
+      "severity": "warning",
+      "file": "README.md",
+      "line": 7,
+      "message": "Image is missing descriptive alternative text",
+      "subject": "assets/diagram.svg",
+      "suggestion": "Add meaningful alternative text, or document that the image is decorative.",
+      "status": "failed",
+      "verificationMethod": "local-static",
+      "confidence": "high"
+    },
+    {
+      "id": "6de0d1b81d75e94c",
+      "rule": "CLI_UNKNOWN_FLAG",
+      "severity": "error",
+      "file": "README.md",
+      "line": 15,
+      "message": "Documented flag '--old-flag' is absent from the declared 'demoapp' CLI contract",
+      "evidenceType": "declared-contract",
+      "subject": "--old-flag",
+      "suggestion": "Verify the CLI help output, then update docs or the declared CLI contract.",
+      "status": "failed",
+      "verificationMethod": "declared-contract",
+      "confidence": "high"
+    },
+    {
+      "id": "32fd5fc3eadf6f59",
+      "rule": "CLI_UNKNOWN_SUBCOMMAND",
+      "severity": "error",
+      "file": "README.md",
+      "line": 15,
+      "message": "Documented 'demoapp' subcommand 'deploy' is absent from the declared CLI contract",
+      "evidenceType": "declared-contract",
+      "subject": "demoapp deploy",
+      "suggestion": "Update the command or the verified CLI contract.",
+      "status": "failed",
+      "verificationMethod": "declared-contract",
+      "confidence": "high"
+    }
+  ],
+  "resolved": [],
+  "unchanged": 0
+}
