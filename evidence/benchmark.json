@@ -72,7 +72,7 @@
       "found": 1
     }
   },
-  "tool": "DocSutra AI 0.2.0",
+  "tool": "DocSutra AI 0.2.1",
   "rules": "2.0.0",
   "node": "v24.15.0"
 }

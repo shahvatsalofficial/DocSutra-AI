@@ -1,6 +1,6 @@
 {
   "name": "docsutra-ai",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Offline documentation auditor: verifies links, anchors, commands, accessibility and leaked secrets in Markdown, and ships 16 portable AI agent skills. No API key, no network, nothing executed.",
   "keywords": ["documentation", "docs", "markdown", "linter", "link-checker", "broken-links", "anchors", "audit", "accessibility", "secrets", "cli", "sarif", "agent-skills", "claude-code", "cursor", "codex", "gemini-cli", "copilot", "mcp-alternative", "docs-as-code", "ai-agents", "documentation-testing"],
   "homepage": "https://github.com/shahvatsalofficial/DocSutra-AI#readme",

@@ -1,33 +1,35 @@
 {
   "schemaVersion": "2.0.0",
   "tool": "DocSutra AI",
-  "toolVersion": "0.2.0",
+  "toolVersion": "0.2.1",
   "rulesVersion": "2.0.0",
   "mode": "static-offline",
-  "createdAt": "2026-11-10T06:16:12.934Z",
+  "createdAt": "2026-11-16T17:55:30.249Z",
   "environment": {
     "node": "v24.15.0",
     "platform": "win32",
     "arch": "x64",
     "gitRevision": null,
-    "durationMs": 774,
+    "durationMs": 524,
     "networkUsed": false,
     "commandsExecuted": 0
   },
   "root": "<self>",
-  "inputFingerprint": "0052568cddea73f445d3d4e956a5967609602155853bd40c1ac6b6543b929869",
+  "inputFingerprint": "8f59787efeeaf04fd5b0a5aa3c18f567b0384f71c638ffbdaff3fa1efa73b420",
   "summary": {
     "files": 58,
     "filesUnreadable": 0,
     "checkedLocalLinks": 52,
-    "externalLinksNotChecked": 28,
+    "externalLinksNotChecked": 29,
     "shellLinesNotExecuted": 35,
     "declaredCliLinesInspected": 22,
     "errors": 0,
     "warnings": 0,
-    "info": 0,
+    "info": 1,
     "suppressed": 0,
-    "byRule": {},
+    "byRule": {
+      "DUPLICATE_HEADING": 1
+    },
     "snippetClasses": {
       "inert-or-unclassified": 34,
       "mutation": 1
@@ -331,9 +333,9 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "5c27af589b638d3f22036010f729151565fda52ff68566373adcca2b1c4d3985",
-      "bytes": 2561,
-      "headings": 6,
+      "sha256": "6bc0ab433b0791bd74234d422ade63de37c51fe36a920a4de2d305b2a1c0505e",
+      "bytes": 2985,
+      "headings": 8,
       "links": 0
     },
     {
@@ -415,10 +417,10 @@
     },
     {
       "path": "docs/STATUS.md",
-      "sha256": "a758e2fa5518d07d310fe1cac10074a86ede080d5d73794301318791810a5382",
-      "bytes": 1906,
+      "sha256": "8f8b6d4fd8317e0594a57feda1a2ee865507f9da48b12a9883946c1b3b346321",
+      "bytes": 2094,
       "headings": 4,
-      "links": 3
+      "links": 4
     },
     {
       "path": "docs/THREAT_MODEL.md",
@@ -485,7 +487,7 @@
     },
     {
       "path": "documents/md/08-ci-and-integration.md",
-      "sha256": "324225637194f94cf1607ef652488f9cc551f5fdd09b6393d55f5262b33d4771",
+      "sha256": "747f9ae27916dda234bd73f02fc7c88e7bd02687a6f00eec9dbfbc8d3b335e4d",
       "bytes": 2250,
       "headings": 8,
       "links": 1
@@ -506,7 +508,7 @@
     },
     {
       "path": "documents/md/11-release-runbook.md",
-      "sha256": "82cce773d24504020bdf4cb66541f45fb536fbbb63b218d1a6a6a51c9069cdd5",
+      "sha256": "21e566dbb1b8e6d9c9d17733d1359422ba84b7bf03ff0d1e077e797e94e14079",
       "bytes": 1632,
       "headings": 8,
       "links": 0
@@ -520,7 +522,7 @@
     },
     {
       "path": "evidence/benchmark.md",
-      "sha256": "47e725606e0dee064a26325db6d8cafaeec8e454446a3be65b3702c0504c7d38",
+      "sha256": "a1d154c5f6c6f851311286a4ef5a8028fbce5a6ca7d812e865973eaa7a9e7fa1",
       "bytes": 668,
       "headings": 1,
       "links": 0
@@ -548,7 +550,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "57364457fab6500b801da95bb43a2239360139c0ea4694cbf1dce11d897bc688",
+      "sha256": "e1a38200972e706903f740632b58cb53a898bf361f4141a7d242c06fed438221",
       "bytes": 7137,
       "headings": 13,
       "links": 32
@@ -596,7 +598,23 @@
       "links": 0
     }
   ],
-  "findings": [],
+  "findings": [
+    {
+      "id": "4c2d3c792b22fb3b",
+      "rule": "DUPLICATE_HEADING",
+      "severity": "info",
+      "category": "structure",
+      "file": "CHANGELOG.md",
+      "line": 37,
+      "message": "Heading 'Changed' repeats line 5",
+      "subject": "dup:Changed",
+      "suggestion": "Rename one heading so anchors stay stable.",
+      "excerpt": "### Changed",
+      "status": "failed",
+      "verificationMethod": "local-static",
+      "confidence": "high"
+    }
+  ],
   "limitations": [
     "External URLs are not fetched or checked.",
     "Shell commands are statically classified and, if you declare cliContracts, compared to that declaration; no command or test is ever executed.",

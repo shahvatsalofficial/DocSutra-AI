@@ -1,16 +1,16 @@
 {
   "schemaVersion": "2.0.0",
   "tool": "DocSutra AI",
-  "toolVersion": "0.2.0",
+  "toolVersion": "0.2.1",
   "rulesVersion": "2.0.0",
   "mode": "static-offline",
-  "createdAt": "2026-11-10T06:16:12.106Z",
+  "createdAt": "2026-11-16T17:55:29.773Z",
   "environment": {
     "node": "v24.15.0",
     "platform": "win32",
     "arch": "x64",
     "gitRevision": null,
-    "durationMs": 448,
+    "durationMs": 254,
     "networkUsed": false,
     "commandsExecuted": 0
   },

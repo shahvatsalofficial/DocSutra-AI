@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 - 2026-11-16
+
+### Changed
+- GitHub Actions updated to latest majors, pinned by commit SHA: `actions/checkout` v7.0.1, `actions/setup-node` v7.1.0, `actions/upload-artifact` v7.0.2. Docs and examples show the same versions.
+- npm release workflow uses trusted publishing (OIDC) with provenance; no stored token.
+- No scanner behaviour changes. Report schema stays `2.0.0`.
+
 ## 0.2.0 - 2026-11-10
 
 ### Added

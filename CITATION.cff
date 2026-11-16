@@ -2,9 +2,9 @@ cff-version: 1.2.0
 message: If you use DocSutra AI, please cite it as below.
 title: DocSutra AI
 type: software
-version: 0.2.0
+version: 0.2.1
 license: Apache-2.0
-date-released: 2026-11-10
+date-released: 2026-11-16
 repository-code: https://github.com/shahvatsalofficial/DocSutra-AI
 authors:
   - family-names: Shah

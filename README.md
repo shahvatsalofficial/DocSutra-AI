@@ -78,7 +78,7 @@ Exit codes: `0` clean, `1` findings at or above `--fail-on` (default `error`), `
 
 ```yaml
 - run: npx docsutra-ai scan --root . --format all --out-dir docsutra-report
-- uses: actions/upload-artifact@v4
+- uses: actions/upload-artifact@v7
   if: always()
   with: { name: docsutra-report, path: docsutra-report }
 ```

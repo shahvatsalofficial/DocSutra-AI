@@ -1,6 +1,6 @@
 {
-  "tool": "docsutra-ai 0.2.0",
-  "generatedAt": "2026-11-10T06:16:13.352Z",
+  "tool": "docsutra-ai 0.2.1",
+  "generatedAt": "2026-11-16T17:55:30.611Z",
   "runtime": {
     "node": "v24.15.0",
     "platform": "win32",
@@ -39,7 +39,7 @@
       "files": 58,
       "errors": 0,
       "warnings": 0,
-      "info": 0,
+      "info": 1,
       "localLinksVerified": 52
     }
   }

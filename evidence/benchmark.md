@@ -1,6 +1,6 @@
 # Benchmark results
 
-Corpus: `benchmark/corpus` (5 files, 18 human-labelled issues + a tricky-syntax file that must stay silent). Tool: DocSutra AI 0.2.0, rules 2.0.0.
+Corpus: `benchmark/corpus` (5 files, 18 human-labelled issues + a tricky-syntax file that must stay silent). Tool: DocSutra AI 0.2.1, rules 2.0.0.
 
 | Metric | Value |
 |---|---:|
