@@ -30,7 +30,7 @@ ol.flow>li.warn{border-color:color-mix(in srgb,var(--warn) 45%,var(--line));back
 @media (min-width:900px){ol.flow.row{grid-template-columns:repeat(var(--n,4),1fr);gap:1.1rem}ol.flow.row>li{padding:2.9rem .95rem .9rem}ol.flow.row>li::before{left:.95rem;top:.85rem}ol.flow.row>li:not(:last-child)::after{left:auto;right:-1.05rem;bottom:auto;top:1.5rem;width:1rem;height:2px}}
 
 /* scenario header */
-.scn{margin:2.4rem 0 1rem;padding:1.1rem 1.2rem;border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:var(--r);background:var(--soft)}
+.scn{margin:2.4rem 0 1rem;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--soft)}
 .scn h3{margin:0 0 .3rem}.scn p{margin:.2rem 0;color:var(--muted)}.scn .tag{display:inline-block;margin-right:.4rem;padding:.08rem .6rem;border-radius:99px;background:var(--tint);color:var(--brand);font:700 .72rem var(--font);letter-spacing:.05em;text-transform:uppercase}
 .cmp{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0}.cmp>div{border:1px solid var(--line);border-radius:var(--r);padding:.9rem 1rem;background:var(--surface)}.cmp>div h4{margin:0 0 .4rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}.cmp .b h4{color:var(--bad)}.cmp .g h4{color:var(--ok)}.cmp p{margin:.3rem 0}
 @media (max-width:700px){.cmp{grid-template-columns:1fr}}
