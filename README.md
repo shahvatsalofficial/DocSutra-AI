@@ -9,6 +9,8 @@
 
 > *Write once. Verify continuously. Trust every guide.* Created by [Vatsal Shah](https://github.com/shahvatsalofficial).
 
+**Documentation site:** https://shahvatsalofficial.github.io/DocSutra-AI/ (light and dark, guides, real-world scenarios, diagrams).
+
 ## Quick start
 
 ```bash

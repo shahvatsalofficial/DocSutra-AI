@@ -14,6 +14,8 @@ npx docsutra-ai scan --root .
 
 Open `.docsutra/audit.html` in a browser, or read `.docsutra/audit.md`. The command exits `1` when errors exist.
 
+{{flow:quickstart}}
+
 ## 3. Read the report
 
 1. **Verdict banner**: PASS, PASS WITH WARNINGS or FAIL.

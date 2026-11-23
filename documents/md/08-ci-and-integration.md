@@ -2,6 +2,8 @@
 
 > GitHub Actions, SARIF code scanning, pre-commit usage, other CI systems and the programmatic API.
 
+{{svg:ci}}
+
 ## GitHub Actions: audit on every pull request
 
 ```yaml

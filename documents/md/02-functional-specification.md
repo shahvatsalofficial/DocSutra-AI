@@ -42,6 +42,8 @@ docsutra version
 
 ### Exit codes
 
+{{svg:exitcodes}}
+
 | Code | Meaning |
 |---|---|
 | 0 | No findings at or above the `--fail-on` level |

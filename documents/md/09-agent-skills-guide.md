@@ -6,6 +6,8 @@
 
 A skill is a folder with a `SKILL.md` file (YAML frontmatter plus instructions) following the Agent Skills layout. DocSutra ships them in `.agents/skills/` and copies them into the folder each AI host reads.
 
+{{svg:skills}}
+
 ## Install
 
 ```bash

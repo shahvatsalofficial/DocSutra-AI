@@ -6,6 +6,10 @@
 
 {{evidence}}
 
+{{chart:tests}}
+
+{{chart:bench}}
+
 ## What is tested
 
 | Layer | Examples | Files |

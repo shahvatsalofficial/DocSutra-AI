@@ -36,6 +36,8 @@
 | `packages/index.mjs` | Public programmatic API |
 | `scripts/` | Benchmark, evidence, skill and documentation builders |
 
+{{svg:arch}}
+
 ## Data model
 
 The report (`schemaVersion` 2.0.0) is a single JSON object: `tool`, `toolVersion`, `rulesVersion`, `mode`, `createdAt`, `environment`, `inputFingerprint`, `summary`, `ledger`, `rules`, `files`, `findings`, `limitations`. A finding has `id`, `rule`, `severity`, `category`, `file`, `line`, `message`, `subject`, `suggestion`, `excerpt`, `status`, `verificationMethod`, `confidence`. The JSON Schema is in `schemas/audit.schema.json`.

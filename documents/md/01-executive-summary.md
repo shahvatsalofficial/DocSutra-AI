@@ -16,6 +16,8 @@ Documentation rots silently. Files move, headings are renamed, flags are removed
 - **CI-ready.** Exit codes 0/1/2, a `--fail-on` threshold, baseline comparison to fail only on new problems, and SARIF for GitHub code scanning.
 - **Agent-ready.** 16 portable skills for Claude Code, Cursor, Codex, Gemini CLI and GitHub Copilot, each labelled with what actually backs it.
 
+{{svg:anatomy}}
+
 ## Who it is for
 
 | Audience | Value |

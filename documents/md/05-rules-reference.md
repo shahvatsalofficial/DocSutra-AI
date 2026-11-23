@@ -2,6 +2,10 @@
 
 > Every rule with its severity, category and evidence type. Generated from the same catalog the scanner uses, so it cannot drift.
 
+## Rules by category
+
+{{chart:rules}}
+
 ## Rule catalog
 
 {{rules}}
